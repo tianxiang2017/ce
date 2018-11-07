@@ -11,16 +11,18 @@
 	<description>Configuration Server</description>
 
 	<parent>
-		<groupId>com.piggymetrics</groupId>
-		<artifactId>piggymetrics</artifactId>
+		<groupId>com.zhmf.ce</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
+		<!-- 配置中心 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<!-- Spring Security安全框架，它主要是利用了AOP来实现的。 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -29,11 +31,12 @@
 
 	<build>
 		<plugins>
+			<!-- 将Spring Boot应用打包为可执行的jar -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>config</finalName>
+					<finalName>config</finalName> <!-- jar包名字会用到这么值-->
 				</configuration>
 			</plugin>
 		</plugins>
