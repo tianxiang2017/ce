@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: account-service
+  cloud:
+    config: # 注册到配置中心
+      uri: http://config:8888 #配置中心地址
+      fail-fast: true
+      username: user #配置中心用户名
+      password: ${CONFIG_SERVICE_PASSWORD:password} #配置中心密码
